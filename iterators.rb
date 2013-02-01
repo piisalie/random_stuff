@@ -42,20 +42,31 @@ end
 
 
 #each_cons
-#p words.each_cons(2) { |word| p word }
+#p numbers.each_cons(3) { |i| p i }
 
+#i = 0
+#while i <= numbers.length - 3
+#  p [ numbers[i], numbers[i + 1], numbers[i +2] ]
+#  i += 1
+#end
 
 
 #each_slice
 #p words.each_slice(2) { |slice| p slice }
 
+#i = 0
+#while i <= words.length
+#  p [ words[i], words[i + 1] ]
+#  i += 2
+#end
 
 
 #each_with_object
 
 
+
 # group_by
-#p numbers.group_by { |i| i%4 }
+#numbers.group_by { |i| i%4 }
 
 #groups = {1 => [], 2 => [], 3 => [], 0 => []}
 #numbers.each do |number|
