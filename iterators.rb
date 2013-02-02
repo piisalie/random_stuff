@@ -62,7 +62,13 @@ end
 
 
 #each_with_object
+p words.each_with_object([]) { |word, a| a << word }
 
+result = []
+words.each do |word|
+  result << word
+end
+p result
 
 
 # group_by
