@@ -9,16 +9,20 @@ class Search
   def search
     @hits = slice(@data)
     while @hits[0].length > 2
-      @hits.map! { |array| slice(array) }
+      map(@hits)
+      p @hits
     end
-    @hits.map! { |array| slice(array) }
+    map(@hits)
     @hits.flatten!
-    p @hits 
+  end
+
+  def map(input)
+    input.map! { |array| slice(array).flatten }
   end
 
   def slice(input)
     notclean = []
-    input.each_slice(slice_size(input)) { |slice|
+    input.each_slice(slice_size(input)) { |slice| 
       notclean << slice if !@blacklist.clean?(slice) }
     return notclean
   end
