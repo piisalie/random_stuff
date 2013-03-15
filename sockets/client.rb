@@ -12,5 +12,9 @@ client = TCPSocket.new("127.0.0.1", 5178)
 car = a.to_yaml
 client.puts car.length
 client.write car
-puts client.gets 
+
+while list_item = client.gets
+  puts list_item.strip
+end
+
 client.close
